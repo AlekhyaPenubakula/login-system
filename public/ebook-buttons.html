@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instant Library</title>
+  <style>
+    /* Style for buttons */
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      margin: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Body style */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-image: url('b.jpg'); /* Replace 'b.jpg' with the path to your image file */
+      background-size: cover;
+    }
+
+    /* Title style */
+    h1 {
+      color: #13fbe8;
+      margin-bottom: 10px;
+    }
+
+    i {
+      color: #13fbe8;
+      margin-bottom: 20px;
+    }
+
+    /* Center the buttons */
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Scrolling text container */
+    .scrolling-text-container {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Scrolling text style */
+    .scrolling-text {
+      white-space: nowrap;
+      color: #13fbe8;
+      font-size: 20px;
+      padding-left: 100%;
+      display: inline-block;
+      animation: scroll-left 10s linear infinite;
+    }
+
+    /* Animation keyframes */
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* Delayed animations */
+    .scrolling-text:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .scrolling-text:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .scrolling-text:nth-child(3) {
+      animation-delay: 1s;
+    }
+  </style>
+  <script>
+    function redirectToUserCredentials() {
+      window.location.href = "subject-section-page.html";
+    }
+
+    function redirectToRequestBooks() {
+      window.location.href = "http://localhost:3001"; // Adjust the path to the second server's endpoint
+    }
+
+    function exitApplication() {
+      window.location.href = "exit.html"; // Redirect to the exit page
+    }
+  </script>
+</head>
+<body>
+  <h1>Instant Library</h1>
+  <i>_A library at your fingertips!</i>
+
+  <div class="buttons">
+    <button onclick="redirectToUserCredentials()">E-Books</button>
+    <button onclick="redirectToRequestBooks()">Request Books</button>
+    <button onclick="exitApplication()">Exit</button>
+  </div>
+
+  <div class="scrolling-text-container">
+    <div class="scrolling-text">New books in Mathematics are uploaded</div>
+    <div class="scrolling-text">New books in English are uploaded</div>
+    <div class="scrolling-text">New books in Data Science are uploaded</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Credentials</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      background-image: url('c.png');
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    select, button {
+      padding: 10px;
+      margin-bottom: 15px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .error {
+      color: red;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<form id="credentialsForm">
+  <label for="course">Select Course:</label>
+  <select id="course">
+    <option value="Bsc">Bsc</option>
+  </select>
+
+  <label for="subject">Select Subject:</label>
+  <select id="subject">
+    <option value="Mathematics">Mathematics</option>
+    <option value="Statistics">Statistics</option>
+    <option value="Computer Science">Computer Science</option>
+    <option value="Data Science">Data Science</option>
+    <option value="English">English</option>
+    <option value="SEC Paper">SEC Paper</option>
+    <option value="Second Language">Second Language</option>
+  </select>
+
+  <button type="submit" id="enterButton">Enter</button>
+  <p id="error" class="error"></p>
+</form>
+
+<script>
+  document.getElementById("credentialsForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission behavior
+
+    var course = document.getElementById("course").value;
+    var subject = document.getElementById("subject").value;
+
+    // Redirect based on selected options
+    switch (course) {
+      case "Bsc":
+        switch (subject) {
+          case "Mathematics":
+            window.location.href = "mathematics.html";
+            break;
+          case "Statistics":
+            window.location.href = "statistics.html";
+            break;
+          case "Computer Science":
+            window.location.href = "cs.html";
+            break;
+          case "Data Science":
+            window.location.href = "data science.html";
+            break;
+          case "English":
+            window.location.href = "english.html";
+            break;
+          case "SEC Paper":
+            window.location.href = "sec.html";
+            break;
+          case "Second Language":
+            window.location.href = "second language.html";
+            break;
+          // Add cases for other subjects within Bsc if needed
+          default:
+            document.getElementById("error").innerText = "Invalid Subject";
+            break;
+        }
+        break;
+      // Add cases for other courses if needed
+      default:
+        document.getElementById("error").innerText = "Invalid Course";
+        break;
+    }
+  });
+</script>
+
+</body>
+</html>

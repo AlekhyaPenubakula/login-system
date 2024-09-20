@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Request Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    
+    h2 {
+        text-align: center;
+    }
+    
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    label {
+        font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    input[type="button"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    input[type="button"]:hover {
+        background-color: #45a049;
+    }
+    
+    input:invalid {
+        border-color: #ff0000;
+    }
+    
+    textarea {
+        resize: vertical;
+    }
+    </style>
+<script>
+function submitForm() {
+    // Get form values
+    var name = document.getElementById("name").value;
+    var year = document.getElementById("year").value;
+    var semester = document.getElementById("semester").value;
+    var rollNo = document.getElementById("rollNo").value;
+    var email = document.getElementById("email").value;
+    var subject = document.getElementById("subject").value;
+    var bookName = document.getElementById("bookName").value;
+    var description = document.getElementById("description").value;
+
+    // Construct email body
+    var emailBody = "Name: " + name + "\n";
+    emailBody += "Year: " + year + "\n";
+    emailBody += "Semester: " + semester + "\n";
+    emailBody += "Roll No: " + rollNo + "\n";
+    emailBody += "Email: " + email + "\n";
+    emailBody += "Subject: " + subject + "\n";
+    emailBody += "Book Name: " + bookName + "\n";
+    emailBody += "Description: " + description + "\n";
+
+    // Send email
+    var mailtoLink = "mailto:instantlibrary1234@gmail.com?subject=Book Request&body=" + encodeURIComponent(emailBody);
+    window.location.href = mailtoLink;
+
+    // Show confirmation message
+    alert("Thank you for your request! We will check on it and notify you.");
+    // Clear form fields
+    document.getElementById("requestForm").reset();
+}
+</script>
+</head>
+<body>
+
+<h2>Book Request Form</h2>
+<form id="requestForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="year">Year:</label><br>
+    <select id="year" name="year" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select><br><br>
+
+    <label for="semester">Semester:</label><br>
+    <select id="semester" name="semester" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select><br><br>
+
+    <label for="rollNo">Roll No:</label><br>
+    <input type="text" id="rollNo" name="rollNo" pattern="[0-9]{12}" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="subject">Subject:</label><br>
+    <select id="subject" name="subject" required>
+        <option value="Mathematics">Mathematics</option>
+        <option value="Statistics">Statistics</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Data Science">Data Science</option>
+        <option value="English">English</option>
+        <option value="SEC-Paper">SEC-Paper</option>
+        <option value="Second Language">Second Language</option>
+    </select><br><br>
+
+    <label for="bookName">Book Name:</label><br>
+    <input type="text" id="bookName" name="bookName" required><br><br>
+
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+
+    <input type="button" value="Submit" onclick="submitForm()">
+</form>
+
+</body>
+</html>

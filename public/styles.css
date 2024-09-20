@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    /* Use the background image */
+    background: url('lib bg.jpg');
+    background-size: cover; /* Ensure the background image covers the entire area */
+    color: hsl(143, 92%, 5%);
+    display: flex;
+    justify-content: flex-end; /* Align the content to the right */
+    align-items: center;
+    height: 100vh; /* Ensure body takes the full height of the viewport */
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    padding: 20px;
+    background-color: transparent; /* No background color */
+    border: none; /* No border */
+    border-radius: 0; /* No border radius */
+    box-shadow: none; /* No box shadow */
+}
+
+h1, h2 {
+    color: rgb(3, 3, 8);
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #030210;
+    text-align: left;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #07010f;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #010509;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 8, 17, 0.5);
+    background-color: #ffffff;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #040009;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #0e032e;
+}
+
+button:active {
+    background-color: #350085;
+}
+
+@media (max-width: 600px) {
+    body {
+        justify-content: center; /* Center content on small screens */
+        align-items: flex-start;
+    }
+    .container {
+        padding: 10px;
+    }
+    label, input, select, textarea, button {
+        font-size: 0.9em;
+    }
+}
